@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="style/reset.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,400" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="style/main.css">
+</head>
+<body class="dark-card">
+<main class="product-card">
+	<section class="product__preview">
+		<div class="product__slider">
+			<form action="">
+				<ul>
+					<li>
+						<input id="first_view" type="radio" name="view" checked>
+						<img class="product__slider_preview" src="images/Nike-SB-Stefan-Janoski-Max.png">
+					</li>
+					<li>
+						<input id="second_view" type="radio" name="view" checked>
+						<img class="product__slider_preview" src="images/1.png">
+					</li>
+					<li>
+						<input id="third_view" type="radio" name="view" checked>
+						<img class="product__slider_preview" src="images/2.png">
+					</li>
+				</ul>	
+			</form>
+			<div class="slider__controls">
+				<label class="slider__controls-item slider__controls-first-view" for="first_view"></label>
+				<label class="slider__controls-item slider__controls-second-view" for="second_view"></label>
+				<label class="slider__controls-item slider__controls-third-view" for="third_view"></label>
+			</div>
+		</div>
+	</section>
+	<section class="product__description">
+		<h2 class="product__heading">Nike SB Stefan <br> Janoski Max</h2>
+		<p class="product__subheading">Unisex Skateboarding Shoe</p>
+		<div class="product__rate">
+			<i class="fa fa-star" aria-hidden="true"></i>
+			<i class="fa fa-star" aria-hidden="true"></i>
+			<i class="fa fa-star" aria-hidden="true"></i>
+			<i class="fa fa-star" aria-hidden="true"></i>
+			<i class="fa fa-star" aria-hidden="true"></i>
+		</div>
+		<select class="product__select" name="size">
+			<option disabled selected>Size</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			<option value="11">11</option>
+		</select>
+		<select class="product__select" name="quantity">
+			<option disabled selected>Qty</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		</select>
+		<button class="product__cart_btn">ADD TO CART</button>
+	</section>
+</main>
+<script>
+		(function(){
+			var collection = document.querySelectorAll('.slider__controls-item');
+
+			collection.forEach(function(item){
+				item.addEventListener('click', function(){
+					var el = this;
+				
+					collection.forEach(function(i){
+						i.classList.remove('active');
+					});
+					el.classList.add('active');
+				})
+			});
+		}());
+</script>
+</body>
+</html>
